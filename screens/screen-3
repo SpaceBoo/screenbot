@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#get profile
+profile=$(gsettings get org.gnome.Terminal.ProfilesList default)
+profile=${profile:1:-1} # remove leading and trailing single quotes
+
+#set wallpaper
+gsettings set org.gnome.desktop.background picture-uri file:///home/fedzilla/Pictures/screenbot/wallpapers/flat-lake-deer.jpg
+
+#set theme and icons
+gsettings set org.gnome.desktop.interface icon-theme Paper
+gsettings set org.gnome.desktop.interface gtk-theme Paper
+
+#set transparency
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${profile}/ use-transparent-background true
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${profile}/ background-transparency-percent "10"
+
+#set shell colors
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${profile}/ background-color "#0f5062"
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${profile}/ foreground-color "#efd097"
+~                                                                              

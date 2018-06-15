@@ -1,0 +1,39 @@
+#!/env/python3
+import urllib.request
+import subprocess #n
+SCREEN_RESOLUTION = subprocess.Popen('xrandr | grep "\*" | cut -d" " -f4' , shell=True, stdout=subprocess.PIPE).communicate()[0].decode('ascii')
+if SCREEN_RESOLUTION == "1680x1050\n" \  #[16:10, xxxyy]
+or SCREEN_RESOLUTION == "1440x900\n" \ 
+or SCREEN_RESOLUTION == "1280x800\n":\
+wallpapers = {
+	'screen-1' : "https://",     
+	'screen-2' : "https://",
+	'screen-3' : "https://",
+}
+elif SCREEN_RESOLUTION == "1280x800\n:  #[5:4, xxyy]
+wallpapers = {
+	'screen-1' : "https://",   
+        'screen-2' : "https://",
+        'screen-3' : "https://",
+}
+elif SCREEN_RESOLUTION == "1024x768\n": #[4:3, xxyy]
+wallpapers = { 
+	'screen-1' : "https://imgur.com/g8Rzpcm.jpg",  
+	'screen-2' : "https://i.imgur.com/Y97SMZH.jpg",  
+	'screen-3' : "https://i.imgur.com/zJfqHtj.jpg"
+}
+else:    
+wallpapers = {
+	'screen-1' : "https://imgur.com/g8Rzpcm.jpg",
+	'screen-2' : "https://i.imgur.com/Y97SMZH.jpg",
+	'screen-3' : "https://i.imgur.com/zJfqHtj.jpg"
+}
+
+ #[16:9 xxyy]
+print ("initializing web-scraping")
+for key in wallpapers:
+        print ("retrieving wallpaper %s" % (key))
+        urllib.request.urlretrieve(wallpapers[key], "/home/Pictures/screenbot_wallpapers/%s.png" % (key))
+        print ("success")
+print ("scraping complete")
+

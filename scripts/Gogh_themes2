@@ -1,0 +1,6 @@
+#!/bin/bash
+
+PROFILE=$(dconf dump /org/gnome/terminal/legacy/profiles:/ | grep -B 2 "Dracula" | sed -n 1p | sed 's/..//;s/.$//')
+gsettings set org.gnome.Terminal.ProfilesList default $PROFILE
+
+

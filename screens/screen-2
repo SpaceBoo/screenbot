@@ -1,0 +1,27 @@
+#!/bin/bash
+#get profile
+profile=$(gsettings get org.gnome.Terminal.ProfilesList default)
+profile=${profile:1:-1} # remove leading and trailing single quotes
+echo "$profile"
+
+#set wallpaper
+gsettings set org.gnome.desktop.background picture-uri file:///home/fedzilla/Pictures/screenbot/wallpapers/wallhaven-569548_1920x1080.png
+
+#set theme and icons
+gsettings set org.gnome.desktop.interface icon-theme Paper
+gsettings set org.gnome.desktop.interface gtk-theme EvoPop-Azure
+
+#set transparency rules
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${profile}/ use-transparent-background true
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${profile}/ background-transparency-percent "10"
+
+#turn theme colors on/off
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${profile}/ use-theme-colors false
+
+#set foreground and background
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${profile}/ background-color "#1e1d30"
+#1e1d30 
+#0e123d
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:${profile}/ foreground-color "#ccf5d7"
+#caf7ce
+
