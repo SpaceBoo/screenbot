@@ -1,4 +1,4 @@
-** This repo has not been out of maintanence for some time **
+** This repo has not been updated since the author switched to OSX and is mostly for personal use ** 
 
 # screenbot
 utility for remembering and switching gnome settings
