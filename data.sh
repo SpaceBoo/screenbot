@@ -5,6 +5,10 @@
 # https://github.com/SpaceisFake/screenbot
 # screenbot--help
 
+
+### THIS IS MOSTLY FOR EXAMPLE PURPOSES AND FOR PERSONAL USE. TO USE YOU MUST SOURCE YOUR OWN WALLPAPERS ###
+
+
 declare -a screen_list
 image_directory="/home/Pictures/screenbot_wallpapers"
 
