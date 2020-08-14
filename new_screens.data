@@ -1,0 +1,23 @@
+#!/bin/bash
+
+### screenbot ## data - user_mades
+### screenbot - gsettings wrapper for saving and remembering gnome settings
+# https://github.com/SpaceisFake/screenbot
+# screenbot--help
+
+: << EOF
+-User made screens go in this script
+-Screens can be created manually using the following format, or through the utilities '--create' option
+-You may use additional files to hold data as long as they are sourced in the main data file
+
+Generic Entry;
+ declare -A $ID
+ $ID[ID]="ID"
+ $ID[image_source]="Wallhaven_URL"
+ $ID[Wallpaper]="wallpaper"
+ $ID[gtk-theme]="gkt-theme"
+ $ID[shell-theme]="shell-theme"
+# Adds $ID to screen_list if it is not already present
+ [[ ${screen_list[@]} =~ (^|[[:space:]])"Emerald_Waves"($|[[:space:]]) ]] || screen_list+=("Emerald_Waves")
+
+EOF

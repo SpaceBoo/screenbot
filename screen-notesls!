@@ -1,4 +1,0 @@
-gsettings set org.gnome.desktop.wm.preferences theme "shell theme name"
-change from multiple screen scripts to one script with different var. sets
-#command script
-#getting close
