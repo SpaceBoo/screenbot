@@ -12,7 +12,9 @@
 declare -a screen_list
 image_directory="/home/Pictures/screenbot_wallpapers"
 
-dir=/home/archie/code/screenbot/scripts/screen_bot/screen_botv2.1
+dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+#dir=/home/archie/code/screenbot/scripts/screen_bot/screen_botv2.1
 . $dir/user_made.data
 
 declare -A Emerald_Waves

@@ -5,7 +5,10 @@
 # https://github.com/SpaceisFake/screenbot
 # screenbot--help
 
-data="/home/archie/code/screenbot/scripts/screen_bot/screen_botv2.1/data.sh"
+#data="/home/archie/code/screenbot/scripts/screen_bot/screen_botv2.1/data.sh"
+dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+data="$dir/data.sh"
+
 . $data
 
 function SET_SCREEN()
